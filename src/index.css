@@ -1,0 +1,9 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+header {
+  background-color: rgb(122, 41, 41);
+  color: white;
+  padding: 15px 0;
+}
