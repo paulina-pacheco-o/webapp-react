@@ -19,3 +19,22 @@ header {
   object-fit: cover;
   border: none;
 }
+
+.detail-card {
+  background-color: rgb(122, 41, 41);
+  margin-top: 50px;
+  color: white;
+  gap: 10px;
+}
+
+.cover-image {
+  width: 40%;
+}
+
+/*.cover-image img{
+max-width: 100%;
+}*/
+
+.text-detail {
+  width: 60%;
+}
