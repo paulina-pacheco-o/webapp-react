@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
-import { useState, useEffect } from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import MovieCard from '../components/MovieCard';
 
 const Homepage = () => {
 
   const [movies, setMovies] = useState([]);
 
   const fetchMovies = () => {
-    axios.get("http://127.0.0.1:3000/api/movies").tehn((resp) => {
+    axios.get("http://127.0.0.1:3000/api/movies").then((resp) => {
       setMovies(resp.data);
+      console.log(resp.data);
     })
       .catch((err) => console.log(err));
-  }
+  };
+
+  useEffect(fetchMovies, [])
   return (
     <div className="container">
       <div className="row">
@@ -19,11 +23,12 @@ const Homepage = () => {
         </div>
       </div>
       <div className="row gy-3">
-        <div className="col-12 col-md-6 col-lg-4">
-          <div className="card-movie">
-            <img src='' alt='' />
-          </div>
-        </div>
+        {movies.map((movie) => {
+          const { id } = movie;
+          return (
+            <MovieCard key={id} movie={movie} />
+          )
+        })}
       </div>
     </div>
   )
