@@ -6,10 +6,12 @@ const DetailsMovie = () => {
   const { id } = useParams();
 
   const [movie, setMovie] = useState([]);
+  const [review, setReview] = useState([]);
 
   const fetchMovies = () => {
     axios.get(`http://localhost:3000/api/movies/${id}`).then((resp) => {
       setMovie(resp.data);
+      setReview(resp.data);
     })
       .catch((err) => console.log(err));
   };
@@ -32,6 +34,17 @@ const DetailsMovie = () => {
                 <p>{movie.abstract}</p>
               </div>
             </div>
+          </div>
+          <div className="reviews">
+            {/*{movie.reviews.map((review) => {
+              return (
+                <div key={review.id}>
+                  {review.name}
+                  {review.vote}
+                  {review.text}
+                </div>
+              );
+            })}*/}
           </div>
         </div>
       </div>
