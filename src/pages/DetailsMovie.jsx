@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const DetailsMovie = () => {
   const { id } = useParams();
@@ -17,25 +18,26 @@ const DetailsMovie = () => {
   useEffect(fetchMovies, []);
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-12">
-          <div className="detail-card">
-            <div className="d-flex">
-              <div className="cover-image">
-                <img src={`http://localhost:5173/movies_cover/${movie.image}`} alt={movie.title} />
-              </div>
-              <div className="text-details text-center mt-3">
-                <h1>{movie.title}</h1>
-                <p>{movie.director}</p>
-                <p>{movie.genre}</p>
-                <p>{movie.release_year}</p>
-                <p>{movie.abstract}</p>
+    <>
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <div className="detail-card">
+              <div className="d-flex">
+                <div className="cover-image">
+                  <img src={`http://localhost:5173/movies_cover/${movie.image}`} alt={movie.title} />
+                </div>
+                <div className="text-details text-center mt-3">
+                  <h1>{movie.title}</h1>
+                  <p>{movie.director}</p>
+                  <p>{movie.genre}</p>
+                  <p>{movie.release_year}</p>
+                  <p>{movie.abstract}</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="reviews">
-            {/*{movie.reviews.map((review) => {
+            <div className="reviews">
+              {/*{movie.reviews.map((review) => {
               return (
                 <div key={review.id}>
                   {review.name}
@@ -44,10 +46,16 @@ const DetailsMovie = () => {
                 </div>
               );
             })}*/}
+            </div>
           </div>
         </div>
+        <Link>
+          <div className="btn">
+            <i className="fas fa-house" />
+          </div>
+        </Link>
       </div>
-    </div>
+    </>
   )
 }
 
