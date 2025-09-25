@@ -4,7 +4,8 @@ const Header = () => {
   return (
     <header className="container-fluid">
       <div className="row">
-        <div className="col-12"><h1>Boolmovies</h1></div>
+        <div className="col-12 d-flex">
+          <img className="film" src='../public/movies_cover/movies_icon.jpg' /><h1>Boolmovies</h1></div>
       </div>
     </header>
   )
