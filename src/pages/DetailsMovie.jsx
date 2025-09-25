@@ -6,17 +6,16 @@ const DetailsMovie = () => {
   const { id } = useParams();
 
   const [movie, setMovie] = useState([]);
-  const [review, setReview] = useState([]);
 
   const fetchMovies = () => {
     axios.get(`http://localhost:3000/api/movies/${id}`).then((resp) => {
       setMovie(resp.data);
-      setReview(resp.data);
     })
       .catch((err) => console.log(err));
   };
 
-  useEffect(fetchMovies, [])
+  useEffect(fetchMovies, []);
+
   return (
     <div className="container">
       <div className="row">
@@ -24,7 +23,7 @@ const DetailsMovie = () => {
           <div className="detail-card">
             <div className="d-flex">
               <div className="cover-image">
-                <img src={movie.image} alt={movie.title} />
+                <img src={`http://localhost:5173/movies_cover/${movie.image}`} alt={movie.title} />
               </div>
               <div className="text-details text-center mt-3">
                 <h1>{movie.title}</h1>

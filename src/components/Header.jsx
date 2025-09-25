@@ -5,7 +5,8 @@ const Header = () => {
     <header className="container-fluid">
       <div className="row">
         <div className="col-12 d-flex">
-          <img className="film" src='../movies_cover/movies_icon.jpg' /><h1>Boolmovies</h1></div>
+          <h1>Boolmovies</h1>
+        </div>
       </div>
     </header>
   )
