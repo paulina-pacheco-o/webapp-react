@@ -19,7 +19,7 @@ const Homepage = () => {
     <div className="container">
       <div className="row">
         <div className="col-12 text-center my-3">
-          <h1>Boolmovies</h1>
+          <h1 className='title-homepage'>Boolmovies</h1>
         </div>
       </div>
       <div className="row gy-3">

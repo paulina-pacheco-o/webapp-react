@@ -49,11 +49,11 @@ const DetailsMovie = () => {
             </div>
           </div>
         </div>
-        <Link>
-          <div className="btn">
-            <i className="fas fa-house" />
+        <div className="to-home-btn">
+          <div className="square-btn">
+            <Link to="/"><i className="fas fa-house" /></Link>
           </div>
-        </Link>
+        </div>
       </div>
     </>
   )

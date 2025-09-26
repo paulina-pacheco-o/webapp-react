@@ -20,6 +20,10 @@ header {
   border: none;
 }
 
+.title-homepage {
+  color: rgb(122, 41, 41);
+}
+
 .detail-card {
   background-color: rgb(122, 41, 41);
   margin-top: 50px;
@@ -55,8 +59,23 @@ p {
   font-size: 20px;
 }
 
-.btn {
+.to-home-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 85px;
+}
+
+.square-btn {
+  border: 2px solid white;
+  padding: 25px;
   background-color: rgb(122, 41, 41);
   color: white;
-  border: solid 2px white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.square-btn:hover {
+  border: 2px solid rgb(122, 41, 41);
+  background-color: white;
+  color: rgb(122, 41, 41);
 }
