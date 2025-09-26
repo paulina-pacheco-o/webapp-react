@@ -75,7 +75,23 @@ p {
 }
 
 .square-btn:hover {
+  cursor: pointer;
   border: 2px solid rgb(122, 41, 41);
   background-color: white;
   color: rgb(122, 41, 41);
+}
+
+.btn-add {
+  background-color: #fff;
+  color: rgb(122, 41, 41);
+  border: 2px solid #fff;
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.btn-add:hover {
+  cursor: pointer;
+  background-color: rgba(162, 77, 77, 0.51);
+  border: 2px solid #fff;
+  transition: 0.3s;
 }
