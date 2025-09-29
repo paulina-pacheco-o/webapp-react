@@ -50,7 +50,7 @@ const DetailsMovie = () => {
             </div>
           </div>
           <div className="review-form">
-            <ReviewForm />
+            <ReviewForm movieId={id} />
           </div>
         </div>
         <div className="to-home-btn">

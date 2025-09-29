@@ -1,17 +1,47 @@
-import React from 'react'
+import React from 'react';
+import axios from 'axios';
+import { useState } from 'react';
 
-const ReviewForm = () => {
+
+const ReviewForm = ({ movieId }) => {
+  const apiUrl = `http://localhost:3000/api/movies/${movieId}/reviews`;
+
+  const initialData = {
+    text: "",
+    vote: "",
+    name: "",
+  }
+
+  const [formData, setFormData] = useState(initialData);
+
+  const setFieldValue = (e) => {
+    const { name, value } = e.target;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post(apiUrl, formData, { headers: { "Content-Type": "application/json" } }).then((resp) => {
+      setFormData(initialData);
+    });
+  }
   return (
     <div className='detail-card p-4'>
       <h2 className='text-light'>Aggiungi recensione</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-group mt-3">
           <label htmlFor="" className='form-label'>Nome</label>
           <input type='text'
             className='form-control'
             placeholder='Nome'
             name='name'
-            id='name' />
+            id='name'
+            value={formData.name}
+            onChange={setFieldValue} />
         </div>
         <div className="form-group mt-3">
           <label htmlFor="" className='form-label'>Voto</label>
@@ -21,7 +51,9 @@ const ReviewForm = () => {
             min="0"
             max="5"
             name='vote'
-            id='vote' />
+            id='vote'
+            value={formData.vote}
+            onChange={setFieldValue} />
         </div>
         <div className="form-group mt-3">
           <label htmlFor="" className='form-label'>Testo recensione</label>
@@ -29,7 +61,9 @@ const ReviewForm = () => {
             className='form-control'
             placeholder='Testo recensione'
             name='text'
-            id='text' />
+            id='text'
+            value={formData.text}
+            onChange={setFieldValue} />
         </div>
         <div className="form-group">
           <button className="btn-secondary mt-4" type='submit'>Salva</button>
