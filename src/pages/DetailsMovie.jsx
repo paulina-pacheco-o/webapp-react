@@ -2,6 +2,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ReviewForm from "../components/ReviewForm";
 
 const DetailsMovie = () => {
   const { id } = useParams();
@@ -47,6 +48,9 @@ const DetailsMovie = () => {
               );
             })}*/}
             </div>
+          </div>
+          <div className="review-form">
+            <ReviewForm />
           </div>
         </div>
         <div className="to-home-btn">
