@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import MovieCard from '../components/MovieCard';
+import Loader from '../components/Loader';
 
 const Homepage = () => {
 
@@ -17,6 +18,7 @@ const Homepage = () => {
   useEffect(fetchMovies, [])
   return (
     <div className="container">
+      <Loader />
       <div className="row">
         <div className="col-12 text-center my-3">
           <h1 className='title-homepage'>Boolmovies</h1>

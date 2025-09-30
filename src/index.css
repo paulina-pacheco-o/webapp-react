@@ -20,7 +20,8 @@ header {
   border: none;
 }
 
-.title-homepage {
+.title-homepage,
+.text-main {
   color: rgb(122, 41, 41);
 }
 
@@ -94,4 +95,23 @@ p {
   background-color: rgba(162, 77, 77, 0.51);
   border: 2px solid #fff;
   transition: 0.3s;
+}
+
+.overlay-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner-border {
+  width: 200px;
+  height: 200px;
+  font-size: 40px;
 }

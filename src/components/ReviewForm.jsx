@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 
 const ReviewForm = ({ movieId }) => {
-  const apiUrl = `http://localhost:3000/api/movies/${movieId}/reviews`;
+  const apiUrl = `http://localhost:5173/api/movies/${movieId}/reviews`;
 
   const initialData = {
     text: "",
